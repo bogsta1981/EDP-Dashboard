@@ -2,7 +2,7 @@ version: '3'
 services:
   mongodb:
     container_name: mongo
-    image: mongo:6.0.4
+    image: mongo:latest
     volumes:
       - mongodb_data:/data/db
     restart: "unless-stopped"
@@ -28,7 +28,7 @@ services:
       - graylog
   graylog:
     container_name: graylog
-    image: graylog/graylog:5.0.2
+    image: graylog/graylog:latest
     volumes:
       - graylog_data:/usr/share/graylog/data
     environment:
@@ -57,7 +57,7 @@ services:
     restart: "unless-stopped"
   influxdb:
     container_name: influxdb
-    image: influxdb:2.6.1
+    image: influxdb:latest
     ports:
       - '8086:8086'
     volumes:
@@ -70,7 +70,7 @@ services:
       - graylog
   grafana:
     container_name: grafana
-    image: grafana/grafana:9.2.10
+    image: grafana/grafana:latest
     ports:
       - '3000:3000'
     volumes:
